@@ -46,7 +46,7 @@ const app = {
         },
         {
             name:'Because I\'m Stupid',
-            singer:'Orange',
+            singer:'Kim Hyun Joong',
             path:'./asset/music/song2.mp3',
             image:'./img/song2.jpg'
         },

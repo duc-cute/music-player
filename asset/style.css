@@ -428,4 +428,72 @@ body {
     .dashboard .time-line {
         margin: 24px 4px 0;
     }
+    .animate-music .icon-music {
+        left: 90px;
+        bottom: 26px;
+    }
+    .song.active  .song-thumb{
+        margin-left: 36px;
+        
+    }
+    @keyframes test1 {
+        0% {
+            opacity: 0;
+            transform: rotate(40deg) translateX(15px) rotate(-40deg) scale(1);
+        }
+        
+        50% {
+            opacity: 1;
+            transform: rotate(180deg) translateX(45px) rotate(-180deg) scale(1.3);
+        }
+        100% {
+            opacity: 0;
+            transform: rotate(260deg) translateX(80px) rotate(-260deg) scale(1.7) rotate(45deg) rotate(-45deg);
+        }
+    }
+    @keyframes test2 {
+        0% {
+            opacity: 0;
+            transform: rotate(40deg) translateX(15px) rotate(-40deg) scale(1);
+        }
+        
+        50% {
+            opacity: 1;
+            transform: rotate(180deg) translateX(45px) rotate(-180deg) scale(1.3);
+        }
+        100% {
+            opacity: 0;
+            transform: rotate(260deg) translateX(80px) rotate(-260deg) scale(1.7) rotate(45deg) rotate(-45deg);
+        }
+    }
+    @keyframes test3 {
+        0% {
+            opacity: 0;
+            transform: rotate(40deg) translateX(15px) rotate(-40deg) scale(1);
+        }
+        
+        50% {
+            opacity: 1;
+            transform: rotate(180deg) translateX(45px) rotate(-180deg) scale(1.3);
+        }
+        100% {
+            opacity: 0;
+            transform: rotate(260deg) translateX(80px) rotate(-260deg) scale(1.7) rotate(45deg) rotate(-45deg);
+        }
+    }
+    @keyframes test4 {
+        0% {
+            opacity: 0;
+            transform: rotate(40deg) translateX(15px) rotate(-40deg) scale(1);
+        }
+        
+        50% {
+            opacity: 1;
+            transform: rotate(180deg) translateX(45px) rotate(-180deg) scale(1.3);
+        }
+        100% {
+            opacity: 0;
+            transform: rotate(260deg) translateX(80px) rotate(-260deg) scale(1.7) rotate(45deg) rotate(-45deg);
+        }
+    }
 }
