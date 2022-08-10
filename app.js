@@ -12,6 +12,7 @@
 
 const $ =document.querySelector.bind(document);
 const $$ =document.querySelectorAll.bind(document);
+const PLAYER_STORAGE_KEY='Duccute';
 
 const playList=$('.playlist');
 const player=$('.app')
@@ -36,6 +37,11 @@ const app = {
     isPlaying:false,
     isRandom:false,
     isRepeat:false,
+    config:JSON.parse(this.localStorage.getItem(PLAYER_STORAGE_KEY)) || {},
+    setConfig:function(key,value) {
+        this.config[key]=value;
+        localStorage.setItem(PLAYER_STORAGE_KEY,JSON.stringify(this.config));
+    },
     listSongPlayed:[],
     songs : [
         {
@@ -116,8 +122,52 @@ const app = {
             singer:'iKon',
             path:'./asset/music/song13.mp3',
             image:'./img/song13.jpg'
-        } 
+        },
+        {
+            name:'How You Like That',
+            singer:'Black Pink',
+            path:'./asset/music/song14.mp3',
+            image:'./img/song14.jpg'
+        },
+        {
+            name:'Ko Ko Bop',
+            singer:'EXO',
+            path:'./asset/music/song15.mp3',
+            image:'./img/song15.jpg'
+
+        },
+        {
+            name:'Way Back Home',
+            singer:'SHAUN',
+            path:'./asset/music/song16.mp3',
+            image:'./img/song16.jpg'
+        },
+        {
+            name:'SAVE ME',
+            singer:'DREAM',
+            path:'./asset/music/song17.mp3',
+            image:'./img/song17.jpg'
+        },
+        {
+            name:'Start',
+            singer:'GAHO(ITAEWON CLASS)',
+            path:'./asset/music/song18.mp3',
+            image:'./img/song18.jpg'
+        },
+        {
+            name:'Bboom Bboom',
+            singer:'MOMOLAND',
+            path:'./asset/music/song19.mp3',
+            image:'./img/song19.jpg'
+        },
+        
     ],
+    loadConfig:function() {
+        this.isRandom=this.config.isRandom;
+        this.isRepeat=this.config.isRepeat;
+        repeatBtn.classList.toggle('active',this.isRepeat);
+        randomBtn.classList.toggle('active',this.isRandom);
+    },
     render:function() {
         const htmls=this.songs.map((song,index) => {
             return `
@@ -274,12 +324,15 @@ const app = {
         //Xử lí Random
         randomBtn.onclick=function() {
             _this.isRandom=!_this.isRandom;
+            _this.setConfig('isRandom',_this.isRandom);
             randomBtn.classList.toggle('active',_this.isRandom);
         }
         //Xử lí Repeat
         repeatBtn.onclick=function() {
             _this.isRepeat=!_this.isRepeat;
+            _this.setConfig('isRepeat',_this.isRepeat);
             repeatBtn.classList.toggle('active',_this.isRepeat);
+
         }
         //Xử lí khi click vào Song
         playList.onclick=function(e) {
@@ -288,6 +341,7 @@ const app = {
                 _this.currentSongIndex=Number(songNode.dataset.index);
                 _this.loadCurrentSong();
                 audio.play();
+                _this.newBackground();
             }
         }
            // Xử lí thu/phóng CD
@@ -369,13 +423,26 @@ const app = {
     },
 
     start:function() {
+
+        //Gán cấu hình từ cnfig sang app
+        this.loadConfig();
+
         //Định nghĩa các thuộc tính mới cho Obj
         this.defineProperties();
+
+        //Tải thông tin bài hát
         this.loadCurrentSong();
+
+        //Xử lí sự kiện
         this.handleEvents();
+
+        //Render ra bài hát
         this.render();
 
+        //Active song
         this.activeSong();
+
+        //Random background cho app
         this.newBackground();
     }
 
