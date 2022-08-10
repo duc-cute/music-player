@@ -155,7 +155,7 @@ body {
 .dashboard .controls .btn{
     padding: 12px;
     font-size: 28px;
-    color: #222;
+    color: #000;
     line-height: 1.5;
 }
 .controls .btn.active {
@@ -217,7 +217,7 @@ body {
 .song .song-serial {
     font-size: 16px;
     font-weight: 500;
-    color: #333;
+    color: #000;
     
 
 }

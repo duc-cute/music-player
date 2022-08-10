@@ -5,9 +5,9 @@
 4.Next/prev=Ok
 6.Random=>Ok
 7.Next when ended=>Ok
-8.Active song
-9.scroll active song into view
-10.Play song onclick
+8.Active song=>Ok
+9.scroll active song into view=>Ok
+10.Play song onclick=>Ok
 */
 
 const $ =document.querySelector.bind(document);
@@ -379,8 +379,6 @@ const app = {
         var angle='to right';
         let gradient =`linear-gradient(${angle},${Color1},${Color2})`;
         document.body.style.background=gradient;
-        console.log(angle,Color1,Color2);
-        console.log('hello');
     },
     nextSong:function() {
         this.currentSongIndex++;
