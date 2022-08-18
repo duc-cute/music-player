@@ -157,18 +157,17 @@ body {
     font-size: 28px;
     color: lightgoldenrodyellow;
     line-height: 1.5;
+    color: burlywood;
 }
 .controls .btn.active {
-    background: -webkit-linear-gradient(180deg,#ff00c4 25%,#ffff00 100% );
+    background: -webkit-linear-gradient(180deg,#ff00c4 25%,#ec1f55 100% );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 .controls .btn-next:active,
 .controls .btn-prev:active {
-    background: -webkit-linear-gradient(180deg,#ff00c4 25%,#ffff00 100% );
-
-
+    background: -webkit-linear-gradient(180deg,#ff00c4 25%,#ec1f55 100% );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -177,7 +176,7 @@ body {
 
 .dashboard .controls .btn-toggle-play {
     font-size: 46px;
-    background: -webkit-linear-gradient(180deg,#ff00c4 25%,#ffff00 100% );
+    background: -webkit-linear-gradient(180deg,#ff00c4 25%,#ec1f55 100% );
 
     -webkit-background-clip: text;
     background-clip:text ;
