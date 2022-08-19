@@ -160,6 +160,12 @@ const app = {
             path:'./asset/music/song19.mp3',
             image:'./img/song19.jpg'
         },
+        {
+            name:'Pink Venom',
+            singer:'Black Pink',
+            path:'./asset/music/song20.mp3',
+            image:'./img/song20.jpg'
+        },
         
     ],
     loadConfig:function() {
