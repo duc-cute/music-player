@@ -106,12 +106,13 @@ body {
 .dashboard .info {
   margin-top: 24px;
   text-align: center;
+  color: #331a03;
+  font-family: "Courgette", cursive;
 }
 .dashboard .info h3 {
   font-size: 26px;
   line-height: 2;
-  font-family: sans-serif;
-  color: #000;
+  color: #331a03;
 }
 .dashboard .time-line {
   display: flex;
@@ -119,12 +120,13 @@ body {
   align-items: center;
   margin: 24px 4px;
 }
-.dashboard .time-line .current-time {
-  min-width: 44px;
-}
+.dashboard .time-line .current-time,
 .dashboard .time-line .total-duration {
   min-width: 44px;
+  color: #331a03;
+  font-family: "Courgette", cursive;
 }
+
 .dashboard .time-line .seek-slider {
   outline: none;
   user-select: none;
@@ -134,7 +136,7 @@ body {
   -webkit-appearance: none;
   appearance: none;
   height: 5px;
-  background-color: #83a9ff;
+  background-color: #212a09;
   border-radius: 4px;
 }
 .dashboard .time-line .seek-slider::-webkit-slider-thumb {
@@ -142,8 +144,8 @@ body {
   appearance: none;
   width: 15px;
   height: 15px;
-  background: #fff;
-  border: 3px solid #3774ff;
+  background: #331a03;
+  border: 3px solid #331a03;
   cursor: pointer;
   border-radius: 50%;
 }
@@ -156,9 +158,8 @@ body {
 .dashboard .controls .btn {
   padding: 12px;
   font-size: 28px;
-  color: lightgoldenrodyellow;
   line-height: 1.5;
-  color: burlywood;
+  color: #331a03;
 }
 .controls .btn.active {
   background: -webkit-linear-gradient(180deg, #ff00c4 25%, #ec1f55 100%);
