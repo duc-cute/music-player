@@ -63,6 +63,7 @@ body {
   background-color: rgba(255, 255, 255, 0.2);
   user-select: none;
   -webkit-user-select: none;
+  z-index: 10;
 }
 .dashboard .logo {
   /* text-align: center; */
@@ -219,12 +220,12 @@ body {
   height: 30px;
   background-color: #092c3e;
   cursor: pointer;
-  z-index: 10;
   transform: translate(76px, -150%);
   border-radius: 20px;
   overflow: hidden;
   transition: ease-in 0.5s;
   /* background-color: #; */
+  z-index: 8;
 }
 
 .check:before {
@@ -478,13 +479,20 @@ body {
     max-width: 480px;
     padding: 24px 12px 0;
     background-color: #f1f1f1;
-    z-index: 2;
+    z-index: 10;
+  }
+
+  .playlist-wrap {
+    margin-top: 1000px;
+    /* max-height: inherit; */
+    max-height: 600px;
+    width: 100%;
   }
   .playlist {
-    margin-top: 1000px;
     margin-left: 0;
-    /* max-height: inherit; */
-    width: 100%;
+  }
+  .list-type {
+    transform: translate(12px, -125%);
   }
   .controls .btn {
     font-size: 28px;
