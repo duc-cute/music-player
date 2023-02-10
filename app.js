@@ -15,6 +15,7 @@ const $$ = document.querySelectorAll.bind(document);
 const PLAYER_STORAGE_KEY = "Duccute";
 
 const playList = $(".playlist");
+const playlistType = $(".list-type");
 const player = $(".app");
 const cdThumb = $(".cd-thumb");
 const cd = $(".cd");
@@ -34,143 +35,261 @@ const prevBtn = $(".btn-prev");
 const app = {
   currentSongIndex: 0,
   isPlaying: false,
+  isChecked: false,
   isRandom: false,
   isRepeat: false,
+  isKpop: true,
   config: JSON.parse(this.localStorage.getItem(PLAYER_STORAGE_KEY)) || {},
   setConfig: function (key, value) {
     this.config[key] = value;
     localStorage.setItem(PLAYER_STORAGE_KEY, JSON.stringify(this.config));
   },
   listSongPlayed: [],
-  songs: [
+  kpop: [
     {
+      id: 0,
       name: "Stay With Me",
       singer: "Chanyeol,Punch",
       path: "./asset/music/song1.mp3",
       image: "./img/song1.jpg",
     },
     {
+      id: 1,
       name: "Because I'm Stupid",
       singer: "Kim Hyun Joong",
       path: "./asset/music/song2.mp3",
       image: "./img/song2.jpg",
     },
     {
+      id: 2,
       name: "This Love",
       singer: "Davichi",
       path: "./asset/music/song3.mp3",
       image: "./img/song3.jpg",
     },
     {
+      id: 3,
       name: "Everytime",
       singer: "Chen x Punch",
       path: "./asset/music/song4.mp3",
       image: "./img/song4.jpg",
     },
     {
+      id: 4,
       name: "I miss you",
       singer: "Soyou",
       path: "./asset/music/song5.mp3",
       image: "./img/song5.jpg",
     },
     {
+      id: 5,
       name: "Once Again",
       singer: "Mad Clown,Kim Na Young",
       path: "./asset/music/song6.mp3",
       image: "./img/song6.jpg",
     },
     {
+      id: 6,
       name: "Sunset",
       singer: "Davichi(Crash landing on you)",
       path: "./asset/music/song7.mp3",
       image: "./img/song7.jpg",
     },
     {
+      id: 7,
       name: "Haru Haru",
       singer: "BigBang",
       path: "./asset/music/song8.mp3",
       image: "./img/song8.jpg",
     },
     {
+      id: 8,
       name: "Lalisa",
       singer: "LISA",
       path: "./asset/music/song9.mp3",
       image: "./img/song9.jpg",
     },
     {
+      id: 9,
       name: "Solo",
       singer: "JENNIE",
       path: "./asset/music/song10.mp3",
       image: "./img/song10.jpg",
     },
     {
+      id: 10,
       name: "Du Du Du",
       singer: "Black Pink",
       path: "./asset/music/song11.mp3",
       image: "./img/song11.jpg",
     },
     {
+      id: 11,
       name: "Kill This Love",
       singer: "Black Pink",
       path: "./asset/music/song12.mp3",
       image: "./img/song12.jpg",
     },
     {
+      id: 12,
       name: "Love Scenario",
       singer: "iKon",
       path: "./asset/music/song13.mp3",
       image: "./img/song13.jpg",
     },
     {
+      id: 13,
       name: "How You Like That",
       singer: "Black Pink",
       path: "./asset/music/song14.mp3",
       image: "./img/song14.jpg",
     },
     {
+      id: 14,
       name: "Ko Ko Bop",
       singer: "EXO",
       path: "./asset/music/song15.mp3",
       image: "./img/song15.jpg",
     },
     {
+      id: 15,
       name: "Way Back Home",
       singer: "SHAUN",
       path: "./asset/music/song16.mp3",
       image: "./img/song16.jpg",
     },
     {
+      id: 16,
       name: "SAVE ME",
       singer: "DREAM",
       path: "./asset/music/song17.mp3",
       image: "./img/song17.jpg",
     },
     {
+      id: 17,
       name: "Start",
       singer: "GAHO(ITAEWON CLASS)",
       path: "./asset/music/song18.mp3",
       image: "./img/song18.jpg",
     },
     {
+      id: 18,
       name: "Bboom Bboom",
       singer: "MOMOLAND",
       path: "./asset/music/song19.mp3",
       image: "./img/song19.jpg",
     },
     {
+      id: 19,
       name: "Pink Venom",
       singer: "Black Pink",
       path: "./asset/music/song20.mp3",
       image: "./img/song20.jpg",
     },
+    {
+      id: 20,
+      name: "Any Song",
+      singer: "Zico",
+      path: "./asset/music/song21.mp3",
+      image: "./img/song21.jpg",
+    },
   ],
+  vpop: [
+    {
+      id: 0,
+      name: "Replay Trên Con Guây ft. Đan Ni",
+      singer: "Phúc Du",
+      path: "./asset/music/song22.mp3",
+      image: "./img/song22.jpg",
+    },
+    {
+      id: 1,
+      name: "từ chối nhẹ nhàng thôi",
+      singer: "Bích Phương feat Phúc Du",
+      path: "./asset/music/song23.mp3",
+      image: "./img/song23.jpg",
+    },
+    {
+      id: 2,
+      name: "Điều khác lạ",
+      singer: "ĐạtG",
+      path: "./asset/music/song24.mp3",
+      image: "./img/song24.jpg",
+    },
+    {
+      id: 3,
+      name: "Muốn được cùng em",
+      singer: "FREAKY x CM1X",
+      path: "./asset/music/song25.mp3",
+      image: "./img/song25.jpg",
+    },
+
+    {
+      id: 4,
+      name: "25",
+      singer:
+        "Mashup by Wikin 25 Táo x Young H x Sol'Bass x Nah x B Ray x Chú 13",
+      path: "./asset/music/song26.mp3",
+      image: "./img/song26.jpg",
+    },
+    {
+      id: 5,
+      name: "Tại vì sao",
+      singer: "RPT MCK",
+      path: "./asset/music/song27.mp3",
+      image: "./img/song27.jpg",
+    },
+    {
+      id: 6,
+      name: "Way back home",
+      singer: "Bray",
+      path: "./asset/music/song28.mp3",
+      image: "./img/song28.jpg",
+    },
+    {
+      id: 7,
+      name: "Cao ốc 20",
+      singer: "B RAY x DatG",
+      path: "./asset/music/song29.mp3",
+      image: "./img/song29.jpg",
+    },
+    {
+      id: 8,
+      name: "Tình Ka",
+      singer: "DANHKA",
+      path: "./asset/music/song30.mp3",
+      image: "./img/song30.jpg",
+    },
+    {
+      id: 9,
+      name: "Xin",
+      singer: "Đạt G, B Ray, Masew",
+      path: "./asset/music/song31.mp3",
+      image: "./img/song31.jpg",
+    },
+    {
+      id: 10,
+      name: "Có chàng trai đang thất tình",
+      singer: "Đạt G ft. Binz",
+      path: "./asset/music/song32.mp3",
+      image: "./img/song32.jpg",
+    },
+  ],
+  songs: [],
   loadConfig: function () {
+    this.isChecked ? (this.songs = this.vpop) : (this.songs = this.kpop);
+
     this.isRandom = this.config.isRandom;
     this.isRepeat = this.config.isRepeat;
+    this.isChecked = this.config.isChecked;
     repeatBtn.classList.toggle("active", this.isRepeat);
     randomBtn.classList.toggle("active", this.isRandom);
+    // this.songs = this.kpop;
+    playlistType.classList.toggle("active", this.isChecked);
   },
   render: function () {
+    this.isChecked ? (this.songs = this.vpop) : (this.songs = this.kpop);
+
     const htmls = this.songs.map((song, index) => {
       return `
             <div data-index="${index}" class="song ${
@@ -197,8 +316,8 @@ const app = {
                 </svg>
             </div>
             <div class="song-body">
-                <h3 class="song-title">${song.name}</h3>
-                <p class="song-author">${song.singer}</p>
+                <h3 class="song-title ellipsis">${song.name}</h3>
+                <p class="song-author ellipsis">${song.singer}</p>
             </div>
             <div class="song-wave ">
                 <span class="stroke"></span>
@@ -221,6 +340,7 @@ const app = {
       },
     });
   },
+  activeList: function () {},
   activeSong: function () {
     _this = this;
 
@@ -228,9 +348,11 @@ const app = {
     listSongPlay.forEach(function (song, index) {
       if (_this.currentSongIndex === index) {
         //Xóa loader and animate music ở song active cũ
-        $(".song.active .song-wave").classList.remove("loader");
-        $(".song.active").classList.remove("active");
-        //Thêm active và loader ở song được active mới
+        if ($(".song.active")) {
+          $(".song.active .song-wave").classList.remove("loader");
+          $(".song.active").classList.remove("active");
+          //Thêm active và loader ở song được active mới
+        }
         song.classList.add("active");
         song.querySelector(".song-wave").classList.add("loader");
       }
@@ -362,6 +484,16 @@ const app = {
       cd.style.width = newCdWidth > 0 ? newCdWidth + "px" : 0;
       cd.style.opacity = newCdWidth / cdWidth;
     };
+
+    // Xử lí khi chuyển đổi list type
+    playlistType.onclick = function () {
+      _this.isChecked = !_this.isChecked;
+      _this.setConfig("isChecked", _this.isChecked);
+      playlistType.classList.toggle("active", _this.isChecked);
+
+      _this.newBackground();
+      _this.render();
+    };
   },
   scrollToView: function () {
     setTimeout(function () {
@@ -441,7 +573,7 @@ const app = {
   },
 
   start: function () {
-    //Gán cấu hình từ cnfig sang app
+    //Gán cấu hình từ config sang app
     this.loadConfig();
 
     //Định nghĩa các thuộc tính mới cho Obj
@@ -461,6 +593,9 @@ const app = {
 
     //Random background cho app
     this.newBackground();
+
+    console.log(this.kpop);
+    console.log(this.songs);
   },
 };
 app.start();

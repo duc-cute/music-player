@@ -20,6 +20,13 @@ body {
   transform: rotate(360deg);
   animation: rotateSongthumb 10s linear infinite;
 }
+
+.ellipsis {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 @keyframes rotateSongthumb {
   from {
     transform: rotate(0);
@@ -185,17 +192,78 @@ body {
   line-height: 2;
 }
 
+.playlist-wrap {
+  position: relative;
+  width: calc(50% - 46px);
+}
+
 .playlist {
   margin-left: 64px;
   display: flex;
   flex-direction: column;
   max-height: 600px;
-  width: calc(50% - 46px);
+  width: 100%;
   overflow-y: auto;
   padding: 0 12px;
   user-select: none;
   -webkit-user-select: none;
+  z-index: 1;
 }
+
+.list-type {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* display: block; */
+  width: 60px;
+  height: 30px;
+  background-color: #092c3e;
+  cursor: pointer;
+  z-index: 10;
+  transform: translate(76px, -150%);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: ease-in 0.5s;
+  /* background-color: #; */
+}
+
+.check:before {
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  left: 5px;
+  top: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+.list-type.active .check::before {
+  transform: translateX(-120%);
+}
+
+.list-type.active {
+  background-color: #fff;
+}
+
+.check::after {
+  content: "";
+  background-color: #092c3e;
+  position: absolute;
+  right: 5px;
+  top: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  transition: 0.5s;
+  transform: translateX(50px);
+}
+
+.list-type.active .check::after {
+  transform: translateX(0);
+}
+
 .playlist::-webkit-scrollbar {
   width: 7px;
   background-color: transparent;
