@@ -47,147 +47,126 @@ const app = {
   listSongPlayed: [],
   kpop: [
     {
-      id: 0,
       name: "Stay With Me",
       singer: "Chanyeol,Punch",
       path: "./asset/music/song1.mp3",
       image: "./img/song1.jpg",
     },
     {
-      id: 1,
       name: "Because I'm Stupid",
       singer: "Kim Hyun Joong",
       path: "./asset/music/song2.mp3",
       image: "./img/song2.jpg",
     },
     {
-      id: 2,
       name: "This Love",
       singer: "Davichi",
       path: "./asset/music/song3.mp3",
       image: "./img/song3.jpg",
     },
     {
-      id: 3,
       name: "Everytime",
       singer: "Chen x Punch",
       path: "./asset/music/song4.mp3",
       image: "./img/song4.jpg",
     },
     {
-      id: 4,
       name: "I miss you",
       singer: "Soyou",
       path: "./asset/music/song5.mp3",
       image: "./img/song5.jpg",
     },
     {
-      id: 5,
       name: "Once Again",
       singer: "Mad Clown,Kim Na Young",
       path: "./asset/music/song6.mp3",
       image: "./img/song6.jpg",
     },
     {
-      id: 6,
       name: "Sunset",
       singer: "Davichi(Crash landing on you)",
       path: "./asset/music/song7.mp3",
       image: "./img/song7.jpg",
     },
     {
-      id: 7,
       name: "Haru Haru",
       singer: "BigBang",
       path: "./asset/music/song8.mp3",
       image: "./img/song8.jpg",
     },
     {
-      id: 8,
       name: "Lalisa",
       singer: "LISA",
       path: "./asset/music/song9.mp3",
       image: "./img/song9.jpg",
     },
     {
-      id: 9,
       name: "Solo",
       singer: "JENNIE",
       path: "./asset/music/song10.mp3",
       image: "./img/song10.jpg",
     },
     {
-      id: 10,
       name: "Du Du Du",
       singer: "Black Pink",
       path: "./asset/music/song11.mp3",
       image: "./img/song11.jpg",
     },
     {
-      id: 11,
       name: "Kill This Love",
       singer: "Black Pink",
       path: "./asset/music/song12.mp3",
       image: "./img/song12.jpg",
     },
     {
-      id: 12,
       name: "Love Scenario",
       singer: "iKon",
       path: "./asset/music/song13.mp3",
       image: "./img/song13.jpg",
     },
     {
-      id: 13,
       name: "How You Like That",
       singer: "Black Pink",
       path: "./asset/music/song14.mp3",
       image: "./img/song14.jpg",
     },
     {
-      id: 14,
       name: "Ko Ko Bop",
       singer: "EXO",
       path: "./asset/music/song15.mp3",
       image: "./img/song15.jpg",
     },
     {
-      id: 15,
       name: "Way Back Home",
       singer: "SHAUN",
       path: "./asset/music/song16.mp3",
       image: "./img/song16.jpg",
     },
     {
-      id: 16,
       name: "SAVE ME",
       singer: "DREAM",
       path: "./asset/music/song17.mp3",
       image: "./img/song17.jpg",
     },
     {
-      id: 17,
       name: "Start",
       singer: "GAHO(ITAEWON CLASS)",
       path: "./asset/music/song18.mp3",
       image: "./img/song18.jpg",
     },
     {
-      id: 18,
       name: "Bboom Bboom",
       singer: "MOMOLAND",
       path: "./asset/music/song19.mp3",
       image: "./img/song19.jpg",
     },
     {
-      id: 19,
       name: "Pink Venom",
       singer: "Black Pink",
       path: "./asset/music/song20.mp3",
       image: "./img/song20.jpg",
     },
     {
-      id: 20,
       name: "Any Song",
       singer: "Zico",
       path: "./asset/music/song21.mp3",
@@ -196,28 +175,24 @@ const app = {
   ],
   vpop: [
     {
-      id: 0,
       name: "Replay Trên Con Guây ft. Đan Ni",
       singer: "Phúc Du",
       path: "./asset/music/song22.mp3",
       image: "./img/song22.jpg",
     },
     {
-      id: 1,
       name: "từ chối nhẹ nhàng thôi",
       singer: "Bích Phương feat Phúc Du",
       path: "./asset/music/song23.mp3",
       image: "./img/song23.jpg",
     },
     {
-      id: 2,
       name: "Điều khác lạ",
       singer: "ĐạtG",
       path: "./asset/music/song24.mp3",
       image: "./img/song24.jpg",
     },
     {
-      id: 3,
       name: "Muốn được cùng em",
       singer: "FREAKY x CM1X",
       path: "./asset/music/song25.mp3",
@@ -225,7 +200,6 @@ const app = {
     },
 
     {
-      id: 4,
       name: "25",
       singer:
         "Mashup by Wikin 25 Táo x Young H x Sol'Bass x Nah x B Ray x Chú 13",
@@ -233,42 +207,36 @@ const app = {
       image: "./img/song26.jpg",
     },
     {
-      id: 5,
       name: "Tại vì sao",
       singer: "RPT MCK",
       path: "./asset/music/song27.mp3",
       image: "./img/song27.jpg",
     },
     {
-      id: 6,
       name: "Way back home",
       singer: "Bray",
       path: "./asset/music/song28.mp3",
       image: "./img/song28.jpg",
     },
     {
-      id: 7,
       name: "Cao ốc 20",
       singer: "B RAY x DatG",
       path: "./asset/music/song29.mp3",
       image: "./img/song29.jpg",
     },
     {
-      id: 8,
       name: "Tình Ka",
       singer: "DANHKA",
       path: "./asset/music/song30.mp3",
       image: "./img/song30.jpg",
     },
     {
-      id: 9,
       name: "Xin",
       singer: "Đạt G, B Ray, Masew",
       path: "./asset/music/song31.mp3",
       image: "./img/song31.jpg",
     },
     {
-      id: 10,
       name: "Có chàng trai đang thất tình",
       singer: "Đạt G ft. Binz",
       path: "./asset/music/song32.mp3",
@@ -441,7 +409,7 @@ const app = {
       }
     };
     //Xử lí khi song tua
-    seekSlider.oninput = function (e) {
+    seekSlider.onchange = function (e) {
       const seekTime = (audio.duration * e.target.value) / 100;
       audio.currentTime = seekTime;
     };
