@@ -436,7 +436,7 @@ const app = {
     };
     //Xử lí khi click vào Song
     playList.onclick = function (e) {
-      const songNode = e.target.closest(".song:not(.active)");
+      const songNode = e.target.closest(".song");
       if (songNode) {
         _this.currentSongIndex = Number(songNode.dataset.index);
         _this.loadCurrentSong();
