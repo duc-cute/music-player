@@ -49,6 +49,7 @@ body {
 .app.playing .icon-play {
   display: none;
 }
+
 .app {
   width: 1200px;
   display: flex;
@@ -77,12 +78,12 @@ body {
 .dashboard .logo h2 {
   background: linear-gradient(
     90deg,
-    #f1f1f1,
-    #ffff00,
-    #4a90e2,
-    #ff86b2,
+    #ec1f55,
+    #6d0513,
+    #0f69d0,
+    #d50954,
     #ff00c4,
-    #83a9ff
+    #074ae7
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
