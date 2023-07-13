@@ -1,14 +1,16 @@
-/*
-1.Render Song=>Ok
-2.Play/pause/peek=>Ok
-3.Cd rotate=>Ok
-4.Next/prev=Ok
-6.Random=>Ok
-7.Next when ended=>Ok
-8.Active song=>Ok
-9.scroll active song into view=>Ok
-10.Play song onclick=>Ok
-*/
+/**
+ * 1.Render Song=>Ok
+ * 2.Play/pause/peek=>Ok
+ * 3.Cd rotate=>Ok
+ * 4.Next/prev=Ok
+ * 6.Random=>Ok
+ * 7.Next when ended=>Ok
+ * 8.Active song=>Ok
+ * 9.scroll active song into view=>Ok
+ * 10.Play song onclick=>Ok
+ *
+ * @format
+ */
 
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
@@ -294,7 +296,6 @@ const app = {
   songs: [],
   loadConfig: function () {
     this.isChecked ? (this.songs = this.vpop) : (this.songs = this.kpop);
-
     this.isRandom = this.config.isRandom;
     this.isRepeat = this.config.isRepeat;
     this.isChecked = this.config.isChecked;
@@ -356,7 +357,6 @@ const app = {
       },
     });
   },
-  activeList: function () {},
   activeSong: function () {
     _this = this;
 
@@ -457,7 +457,7 @@ const app = {
       }
     };
     //Xử lí khi song tua
-    seekSlider.onchange = function (e) {
+    seekSlider.oninput = function (e) {
       const seekTime = (audio.duration * e.target.value) / 100;
       audio.currentTime = seekTime;
     };
@@ -591,7 +591,6 @@ const app = {
   start: function () {
     //Gán cấu hình từ config sang app
     this.loadConfig();
-
     //Định nghĩa các thuộc tính mới cho Obj
     this.defineProperties();
 
