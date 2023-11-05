@@ -40,7 +40,6 @@ const app = {
   isChecked: false,
   isRandom: false,
   isRepeat: false,
-  isKpop: true,
   config: JSON.parse(this.localStorage.getItem(PLAYER_STORAGE_KEY)) || {},
   setConfig: function (key, value) {
     this.config[key] = value;
@@ -292,6 +291,24 @@ const app = {
       path: "./asset/music/song40.mp3",
       image: "./img/song40.jpg",
     },
+    {
+      name: "Từng Quen",
+      singer: "WREN EVANS",
+      path: "./asset/music/song41.mp3",
+      image: "./img/song41.jpg",
+    },
+    {
+      name: "W/n - id 072019 | 3107 ft 267",
+      singer: "W/n",
+      path: "./asset/music/song42.mp3",
+      image: "./img/song42.jpg",
+    },
+    {
+      name: "Hẹn Một Mai",
+      singer: "Bùi Anh Tuấn",
+      path: "./asset/music/song43.mp3",
+      image: "./img/song43.jpg",
+    },
   ],
   songs: [],
   loadConfig: function () {
@@ -306,7 +323,7 @@ const app = {
   },
   render: function () {
     this.isChecked ? (this.songs = this.vpop) : (this.songs = this.kpop);
-
+    console.log("check", this.isChecked);
     const htmls = this.songs.map((song, index) => {
       return `
             <div data-index="${index}" class="song ${
@@ -353,6 +370,8 @@ const app = {
   defineProperties: function () {
     Object.defineProperty(this, "currentSong", {
       get: function () {
+        this.isChecked ? (this.songs = this.vpop) : (this.songs = this.kpop);
+
         return this.songs[this.currentSongIndex];
       },
     });
@@ -504,6 +523,7 @@ const app = {
     // Xử lí khi chuyển đổi list type
     playlistType.onclick = function () {
       _this.isChecked = !_this.isChecked;
+
       _this.setConfig("isChecked", _this.isChecked);
       playlistType.classList.toggle("active", _this.isChecked);
 
