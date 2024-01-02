@@ -309,6 +309,25 @@ const app = {
       path: "./asset/music/song43.mp3",
       image: "./img/song43.jpg",
     },
+    {
+      name: "W/n - id 2022 ft. 267",
+      singer: "W/n",
+      path: "./asset/music/song44.mp3",
+      image: "./img/song44.jpg",
+    },
+    {
+      name: "BUỒN HAY VUI",
+      singer: "VSOUL x MCK x Obito x Ronboogz x Boyzed",
+      path: "./asset/music/song45.mp3",
+      image: "./img/song45.jpg",
+    },
+    {
+      name: "NGÀY MAI NGƯỜI TA LẤY CHỒNG",
+      singer: "THÀNH ĐẠT x ĐÔNG THIÊN ĐỨC",
+      path: "./asset/music/song46.mp3",
+      image: "./img/song46.jpg",
+    },
+    
   ],
   songs: [],
   loadConfig: function () {
