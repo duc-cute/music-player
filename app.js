@@ -378,16 +378,16 @@ const app = {
               song.image
             }') ;"></div>
             <div class="animate-music">
-                <svg fill="#fff" viewBox="0 0 512 512" class="icon-music icon-music-1">
+                <svg fill="#ee3131" viewBox="0 0 512 512" class="icon-music icon-music-1">
                     <path d="M470.38 1.51L150.41 96A32 32 0 0 0 128 126.51v261.41A139 139 0 0 0 96 384c-53 0-96 28.66-96 64s43 64 96 64 96-28.66 96-64V214.32l256-75v184.61a138.4 138.4 0 0 0-32-3.93c-53 0-96 28.66-96 64s43 64 96 64 96-28.65 96-64V32a32 32 0 0 0-41.62-30.49z"></path>
                 </svg>
-                <svg fill="#fff" viewBox="0 0 384 512" class="icon-music icon-music-2">
+                <svg fill="#ee3131" viewBox="0 0 384 512" class="icon-music icon-music-2">
                     <path d="M310.94 1.33l-96.53 28.51A32 32 0 0 0 192 60.34V360a148.76 148.76 0 0 0-48-8c-61.86 0-112 35.82-112 80s50.14 80 112 80 112-35.82 112-80V148.15l73-21.39a32 32 0 0 0 23-30.71V32a32 32 0 0 0-41.06-30.67z"></path>
                 </svg>
-                <svg fill="#fff" viewBox="0 0 512 512" class="icon-music icon-music-3">
+                <svg fill="#ee3131" viewBox="0 0 512 512" class="icon-music icon-music-3">
                     <path d="M470.38 1.51L150.41 96A32 32 0 0 0 128 126.51v261.41A139 139 0 0 0 96 384c-53 0-96 28.66-96 64s43 64 96 64 96-28.66 96-64V214.32l256-75v184.61a138.4 138.4 0 0 0-32-3.93c-53 0-96 28.66-96 64s43 64 96 64 96-28.65 96-64V32a32 32 0 0 0-41.62-30.49z"></path>
                 </svg>
-                <svg fill="#fff" viewBox="0 0 384 512" class="icon-music icon-music-4">
+                <svg fill="#ee3131" viewBox="0 0 384 512" class="icon-music icon-music-4">
                     <path d="M310.94 1.33l-96.53 28.51A32 32 0 0 0 192 60.34V360a148.76 148.76 0 0 0-48-8c-61.86 0-112 35.82-112 80s50.14 80 112 80 112-35.82 112-80V148.15l73-21.39a32 32 0 0 0 23-30.71V32a32 32 0 0 0-41.06-30.67z"></path>
                 </svg>
             </div>
@@ -455,7 +455,7 @@ const app = {
       audio.play();
       _this.activeSong();
       _this.scrollToView();
-      _this.newBackground();
+      // _this.newBackground();
     };
     //Khi prev song
     prevBtn.onclick = function () {
@@ -467,7 +467,7 @@ const app = {
       audio.play();
       _this.activeSong();
       _this.scrollToView();
-      _this.newBackground();
+      // _this.newBackground();
     };
     //Khi song được play
     audio.onplay = function () {
@@ -548,9 +548,10 @@ const app = {
       const songNode = e.target.closest(".song");
       if (songNode) {
         _this.currentSongIndex = Number(songNode.dataset.index);
+
         _this.loadCurrentSong();
         audio.play();
-        _this.newBackground();
+        // _this.newBackground();
       }
     };
     // Xử lí thu/phóng CD
@@ -569,7 +570,7 @@ const app = {
       _this.setConfig("isChecked", _this.isChecked);
       playlistType.classList.toggle("active", _this.isChecked);
 
-      _this.newBackground();
+      // _this.newBackground();
       _this.render();
     };
   },
@@ -581,39 +582,39 @@ const app = {
       });
     }, 200);
   },
-  newBackground: function () {
-    let hex = [
-      "0",
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7",
-      "8",
-      "9",
-      "a",
-      "b",
-      "c",
-      "d",
-      "e",
-    ];
-    // let current;
-    function codeColer(current) {
-      for (let i = 0; i < 6; i++) {
-        let index = Math.floor(Math.random() * 14);
-        let y = hex[index];
-        current += y;
-      }
-      return current;
-    }
-    let Color1 = codeColer("#");
-    let Color2 = codeColer("#");
-    var angle = "to right";
-    let gradient = `linear-gradient(${angle},${Color1},${Color2})`;
-    document.body.style.background = gradient;
-  },
+  // newBackground: function () {
+  //   let hex = [
+  //     "0",
+  //     "1",
+  //     "2",
+  //     "3",
+  //     "4",
+  //     "5",
+  //     "6",
+  //     "7",
+  //     "8",
+  //     "9",
+  //     "a",
+  //     "b",
+  //     "c",
+  //     "d",
+  //     "e",
+  //   ];
+  //   // let current;
+  //   function codeColer(current) {
+  //     for (let i = 0; i < 6; i++) {
+  //       let index = Math.floor(Math.random() * 14);
+  //       let y = hex[index];
+  //       current += y;
+  //     }
+  //     return current;
+  //   }
+  //   let Color1 = codeColer("#");
+  //   let Color2 = codeColer("#");
+  //   var angle = "to right";
+  //   let gradient = `linear-gradient(${angle},${Color1},${Color2})`;
+  //   document.body.style.backgroundImage = gradient;
+  // },
   nextSong: function () {
     this.currentSongIndex++;
     if (this.currentSongIndex >= this.songs.length) {
@@ -644,6 +645,8 @@ const app = {
 
   loadCurrentSong: function () {
     cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`;
+    document.body.style.backgroundImage = `url('${this.currentSong.image}')`;
+
     heading.innerText = this.currentSong.name;
     author.innerText = this.currentSong.singer;
     audio.src = `${this.currentSong.path}`;
@@ -669,7 +672,7 @@ const app = {
     this.activeSong();
 
     //Random background cho app
-    this.newBackground();
+    // this.newBackground();
 
     console.log(this.kpop);
     console.log(this.songs);

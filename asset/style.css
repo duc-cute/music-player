@@ -1,3 +1,5 @@
+/** @format */
+
 * {
   padding: 0;
   margin: 0;
@@ -12,6 +14,8 @@ body {
   justify-content: center;
   height: 100vh;
   background-color: #fff;
+  background-size: contain;
+  background-repeat: repeat-x;
 }
 
 .song.active .song-thumb {
@@ -61,7 +65,7 @@ body {
   padding: 32px;
   box-shadow: 1px 2px 12px 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.6);
   user-select: none;
   -webkit-user-select: none;
   z-index: 10;
@@ -283,9 +287,12 @@ body {
   padding: 18px 16px;
   border-radius: 8px;
   box-shadow: 1px 2px 12px 6px rgba(0, 0, 0, 0.1);
-  background-color: rgba(0, 255, 255, 0.02);
+  background-color: rgba(255, 255, 255, 0.2);
   position: relative;
   transition: all linear 0.1s;
+}
+.song.active {
+  background-color: rgba(0, 255, 255, 0.2);
 }
 .song:hover {
   transform: scale(98%);
@@ -325,11 +332,11 @@ body {
 .song .song-body h3 {
   font-size: 18px;
   font-weight: 500;
-  color: #f1f1f1;
+  color: #000;
 }
 .song .song-body p {
   font-size: 14px;
-  color: #f1f1f1;
+  color: #000;
 }
 /* Sound-wave */
 .loader {
