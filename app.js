@@ -327,7 +327,30 @@ const app = {
       path: "./asset/music/song46.mp3",
       image: "./img/song46.jpg",
     },
-    
+    {
+      name: "CHÚNG TA CỦA TƯƠNG LAI",
+      singer: "SƠN TÙNG M-TP",
+      path: "./asset/music/song47.mp3",
+      image: "./img/song47.jpg",
+    },
+    {
+      name: "BẠN ĐỜI",
+      singer: "KARIK - (FT. GDUCKY)",
+      path: "./asset/music/song48.mp3",
+      image: "./img/song48.jpg",
+    },
+    {
+      name: "Nụ hôn Bisou",
+      singer: "Mikelodic",
+      path: "./asset/music/song49.mp3",
+      image: "./img/song49.jpg",
+    },
+    {
+      name: "TỪNG LÀ",
+      singer: "VŨ CÁT TƯỜNG",
+      path: "./asset/music/song50.mp3",
+      image: "./img/song50.jpg",
+    },
   ],
   songs: [],
   loadConfig: function () {
